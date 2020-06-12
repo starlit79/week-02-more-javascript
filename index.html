@@ -25,9 +25,14 @@
         let smallCar = {
             engineSize: 4,
             displacement: 2,
-            fuelType: 'diesel',
+            fuelType: 'diesel'
         };
 
+        let smallTruck = {
+            engineSize: 6,
+            displacement: 4,
+            fuelType: 'regular'
+        }
 //function Name (Parameter) {inside function will excute}
 //declaring function
             function getEfficiencyRating (vehicle){
@@ -37,7 +42,7 @@
             
             
             //slide 15 and 16 have info on 'switch'
-                switch (vehicle.enginesize) {
+                switch (vehicle.engineSize) {
                 case 1: 
                 case 2: 
                 case 3: 
@@ -46,7 +51,7 @@
                     break;
                 case 5:
                 case 6: 
-                    rating =6;
+                    rating = 6;
                     break;
                 case 7:
                 case 8: 
@@ -54,8 +59,16 @@
                     break;
                 default: 
             }
-            }
 
+            if (vehicle.fuelType == 'diesel') {
+                // increment plus one: +=, ++
+                rating = rating + 1;
+                //same as rating++;
+            }
+            // >10 then make it 10
+            //return something
+            return rating;
+            }
 
             
 
@@ -65,7 +78,9 @@
         //expect a 9
         let smallCarRating =  getEfficiencyRating(smallCar);
 
-        console.log(smallCarRating);
+        let smallTruckRating = getEfficiencyRating(smallTruck);
+
+        console.log({smallCarRating, smallTruckRating});
 
     </script>
 
